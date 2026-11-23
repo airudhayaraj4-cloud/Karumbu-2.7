@@ -135,6 +135,7 @@ window.__kSave=function(hk,v){if(!hk||hk==='new')return;try{var m=ld();if(v)m[hk
   })};
   window.__karumbuWA=async function(src,name,phone,text){
     if(!(window.AndroidNative&&window.AndroidNative.sendImage))return false;
+    if(/பார்க்கவும்\)\s*$/.test(String(text||'')))text='';
     try{
       var nw=typeof window.AndroidNative.sendFiles==='function',pdf=/\.pdf$/i.test(String(name||''));
       if(pdf&&!nw)return false;
